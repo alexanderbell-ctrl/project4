@@ -18,7 +18,8 @@ int main() {
 	while(keepGoing) {
 		for(int horse = 0; horse < 5; ++horse) {
 			advance(horse, track_positions);
-		} //end for loop
+			printLane(horse, track_positions);
+		} //end for loop	
 		keepGoing = false;
 	} //end while loop
 } //end main
@@ -28,6 +29,7 @@ void advance(int horseNum, int* horse_position) {
 	std::cout << "coin flip: " << coin_flip << "\n";
 	if(coin_flip == 2) {
 		std::cout << "horse #" << horseNum << "advances 1\n";
+		horse_position[horseNum] += 1;
 	} //end if
 } //end advance
 
