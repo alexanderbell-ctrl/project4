@@ -11,24 +11,29 @@ int main() {
 
 	int track_positions[5] ={0,0,0,0,0};
 	for(int i = 0; i < 5; ++i) {
-		printLane(i, track_positions);
+		printLane(i, track_positions);	
 	} //end for loop
-	
+	std::cout << "\n\n";
+
 	bool keepGoing = true;
 	while(keepGoing) {
+		std::cout << "Press enter to continue to next round...";
+		std::cin.get();
+		std::cout << "\n\n";
+
 		for(int horse = 0; horse < 5; ++horse) {
 			advance(horse, track_positions);
 			printLane(horse, track_positions);
 		} //end for loop
 
-		std::cout << "\n ---ROUND OVER--- \n";
-
 		for(int horse = 0; horse < 5; ++horse) {
 			if(isWinner(horse, track_positions)) {
 				keepGoing = false;
-				std::cout << "a horse won";
+				std::cout << "Horse " << horse << " won!";
 			} //end if
 		} //end for loop
+
+
 	} //end while loop
 } //end main
 
@@ -45,9 +50,9 @@ bool isWinner(int horseNum, int* horse_position) {
 
 void advance(int horseNum, int* horse_position) {	
 	int coin_flip = (std::rand() % 2) +1;
-	std::cout << "coin flip: " << coin_flip << "\n";
+	//std::cout << "coin flip: " << coin_flip << "\n";
 	if(coin_flip == 2) {
-		std::cout << "horse #" << horseNum << "advances 1\n";
+		//std::cout << "horse #" << horseNum << "advances 1\n";
 		horse_position[horseNum] += 1;
 	} //end if
 } //end advance
