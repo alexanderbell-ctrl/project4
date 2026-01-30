@@ -21,6 +21,8 @@ while:
     print: Winner is Horse___!
   else:
     nada
+  print: "Press enter to proceed to next round..."
+  wait for user input
 ```
 
 - advance (int horseNum, int* horse_positon)
