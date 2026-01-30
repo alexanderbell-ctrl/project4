@@ -19,10 +19,25 @@ int main() {
 		for(int horse = 0; horse < 5; ++horse) {
 			advance(horse, track_positions);
 			printLane(horse, track_positions);
+			
+			if(isWinner(horse, track_positions)) {
+				keepGoing = false;
+				std::cout << "a horse won";
+			} //end if
 		} //end for loop	
-		keepGoing = false;
 	} //end while loop
 } //end main
+
+
+bool isWinner(int horseNum, int* horse_position) {
+	if(horse_position[horseNum] == 14) {
+		return true;
+	} //end if
+	else {
+		return false;
+	} //end else
+} //end isWinner
+
 
 void advance(int horseNum, int* horse_position) {	
 	int coin_flip = (std::rand() % 2) +1;
@@ -32,7 +47,6 @@ void advance(int horseNum, int* horse_position) {
 		horse_position[horseNum] += 1;
 	} //end if
 } //end advance
-
 
 
 void printLane(int horseNum, int* horse_position) {
