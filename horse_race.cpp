@@ -19,12 +19,16 @@ int main() {
 		for(int horse = 0; horse < 5; ++horse) {
 			advance(horse, track_positions);
 			printLane(horse, track_positions);
-			
+		} //end for loop
+
+		std::cout << "\n ---ROUND OVER--- \n";
+
+		for(int horse = 0; horse < 5; ++horse) {
 			if(isWinner(horse, track_positions)) {
 				keepGoing = false;
 				std::cout << "a horse won";
 			} //end if
-		} //end for loop	
+		} //end for loop
 	} //end while loop
 } //end main
 
