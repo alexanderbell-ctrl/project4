@@ -37,8 +37,11 @@ if 2:
 
 - printLane (int horseNum, int* horse_position)
 ```
-initizalize template lane array (*.*.*.*.*.*.*.*)
-replace one character in array with *int horseNum* @ corresponding position value in *horse_position*
+for numbers 0->*horse_position*:
+    print "*"
+print *horseNum*
+for numbers *horse_position* < 14:
+    print "*"
 ```
 
 - isWinner (int horseNum, int* horse_position)
